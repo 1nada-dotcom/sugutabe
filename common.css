@@ -1,0 +1,261 @@
+@charset "UTF-8";
+/* CSS Document */
+html {
+  font-size: 62.5%; /* 16px * 62.5% = 10px */
+  width: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+}
+
+body {
+  color: #333; /* RGB */
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+    sans-serif;
+  font-weight: 500;
+  font-size: 1.6em;
+  line-height: 2.4rem;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+section {
+  padding: 15px 30px;
+  max-width: 1160px;
+  margin: 0 auto 35px;
+}
+
+@media (min-width: 860px) {
+  section {
+    padding: 30px 60px;
+    margin-bottom: 70px;
+  }
+}
+section h1,
+h2,
+h3 {
+  font-family: "Zen Maru Gothic", "新丸ゴシック", "游ゴシック体", YuGothic,
+    "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  font-style: normal;
+  line-height: 4rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 3.2rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.none {
+  display: none;
+}
+
+/* header */
+
+.header {
+  width: 100%;
+  position: absolute;
+}
+
+.header-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 15px 30px;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+/* navigation */
+@media (max-width: 860px) {
+  .header-icon {
+    width: 90px;
+  }
+
+  .nav-open {
+    display: block;
+    top: 20px;
+    right: 45px;
+    cursor: pointer;
+  }
+
+  .nav-open span,
+  .nav-open span:before,
+  .nav-open span:after {
+    position: absolute;
+    height: 1px;
+    width: 25px;
+    border-radius: 3px;
+    background: #777;
+    display: block;
+    content: "";
+  }
+
+  .nav-open span {
+    top: 20px;
+    right: 20px;
+  }
+
+  .nav-open span:before {
+    bottom: -9px;
+  }
+
+  .nav-open span:after {
+    bottom: -18px;
+  }
+
+  #nav-content {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 80%;
+    height: 100%;
+    background-color: rgb(255, 255, 255, 0.9);
+    text-align: left;
+    padding: 15px 0 0 24px;
+    transform: translateX(-105%);
+    transition: 0.3s ease-in-out;
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.25);
+  }
+
+  .nav-drawer__title-image {
+    width: 120px;
+    margin-bottom: 50px;
+  }
+
+  .header__navigation ul li::before {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/item/tomato.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+  }
+
+  #nav-content ul li {
+    margin-bottom: 36px;
+  }
+
+  #nav-content ul li a {
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #723711;
+  }
+
+  #nav-close {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+  }
+
+  #nav-input:checked ~ #nav-close {
+    display: block;
+  }
+
+  #nav-input:checked ~ #nav-content {
+    transform: translateX(0%);
+  }
+}
+
+@media (min-width: 860px) {
+  .header nav {
+    display: block;
+    text-align: right;
+  }
+
+  .header nav ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .header nav li a {
+    padding: 0 15px;
+    color: #333333;
+    font-size: 1.6rem;
+  }
+
+  .header-icon {
+    width: 180px;
+  }
+
+  .nav-drawer__title-image {
+    display: none;
+  }
+}
+
+/* footer */
+
+.footer {
+  height: 200px;
+  padding: 20px 30px;
+  background-color: #723711;
+  border-radius: 70px 70px 0 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  gap: 70px;
+  align-items: center;
+  overflow: hidden;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.footer-image-wrapper img {
+  width: 120px;
+}
+
+.footer__copyright {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+#scroll-top {
+  background-color: rgba(114, 55, 17, 0.4);
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 200px;
+  padding: 10px;
+}
+#scroll-top a {
+  text-decoration: none;
+  color: #333;
+}
+
+.scroll-top-img {
+  width: 30px;
+}
+
+@media (min-width: 860px) {
+  .scroll-top-img {
+    width: 60px;
+  }
+}
